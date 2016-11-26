@@ -15,7 +15,7 @@ public class Player {
     private final String name;
     private final List<Card> cards = newArrayList();
 
-    public Player(final String name) {
+    Player(final String name) {
         checkArgument(!isNullOrEmpty(name));
         this.name = name;
     }

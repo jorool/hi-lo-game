@@ -21,7 +21,6 @@ public class HiLoGame {
     private final DeckOfCards deck;
     private final List<Player> players = newArrayList();
     private final Map<Player, Integer> wins = newHashMap();
-    Player winner;
 
     public HiLoGame(UserInterface ui, DeckOfCards deck, String p1, String p2, String... otherPlayers) {
         checkNotNull(ui);
@@ -53,7 +52,7 @@ public class HiLoGame {
         for (int i = 1; i <= rounds; i++)
             playRound(i);
 
-        winner = getWinner();
+        final Player winner = getWinner();
         ui.notifyUser("\nwinner of the game: " + winner);
     }
 
@@ -93,7 +92,7 @@ public class HiLoGame {
         wins.put(player, wins.get(player) + 1);
     }
 
-    private Player getWinner() {
+    Player getWinner() {
         final Integer qtyWins = wins.entrySet().stream()
                 .max(comparingByValue())
                 .map(Map.Entry::getValue)
