@@ -1,4 +1,4 @@
-#Hi-Lo basic card game engine#
+# Hi-Lo basic card game engine #
 
 Hi-Lo is played with a standard single 52 deck of cards.
 
